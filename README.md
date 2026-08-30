@@ -1,14 +1,15 @@
 # RESERA
 
-RESERA is a student-led research collective with 1,050+ members and growing. This repository contains the public Svelte site and the Django account/opportunity service.
+RESERA is a student-led research collective with 1,200+ members and growing. The public site is a Nuxt 4 application generated as SEO-ready HTML and hydrated into an interactive Vue experience in the browser. The repository also contains the future Django account and opportunity service.
 
 ## Architecture
 
-- `src/` — Svelte frontend, built with Bun and Vite
-- `backend/` — Django session authentication, CSRF protection, opportunity submissions, and staff moderation
-- `.github/workflows/deploy-pages.yml` — static frontend deployment to GitHub Pages
+- `app/` — TypeScript, Vue, and Nuxt 4 frontend
+- `public/` — RESERA imagery, social preview, robots, and sitemap
+- `backend/` — Django session authentication, opportunity submissions, and staff moderation retained for future use
+- `.github/workflows/deploy-pages.yml` — Nuxt static generation and GitHub Pages deployment
 
-GitHub Pages cannot execute Python. The frontend can stay on Pages, while Django runs on a server controlled by RESERA. The two are connected with the `VITE_API_BASE_URL` repository variable.
+GitHub Pages serves generated static files and cannot execute Python. The frontend displays approved opportunities after hydration only when `NUXT_PUBLIC_API_BASE` points to a deployed Django service.
 
 ## Frontend
 
@@ -17,14 +18,16 @@ bun install
 bun run dev
 ```
 
-## Backend
+The local app is available under `/Resera/`, matching its GitHub Pages project path.
 
-See [`backend/README.md`](backend/README.md) for local setup and production environment settings. New opportunities are pending by default; staff approve or reject them through Django Admin.
-
-## Verification
+## Validation
 
 ```powershell
-bun run build
-.\.venv\Scripts\python.exe backend\manage.py check
+bun run typecheck
+bun run generate
 .\.venv\Scripts\python.exe backend\manage.py test core
 ```
+
+## Backend
+
+See [`backend/README.md`](backend/README.md) for Django setup. The public Nuxt release intentionally does not expose authentication controls until that service is hosted.

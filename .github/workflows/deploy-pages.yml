@@ -29,10 +29,13 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Build site
+      - name: Type-check Nuxt
+        run: bun run typecheck
+
+      - name: Generate SEO-ready site
         env:
-          VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL }}
-        run: bun run build
+          NUXT_PUBLIC_API_BASE: ${{ vars.NUXT_PUBLIC_API_BASE }}
+        run: bun run generate
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
@@ -40,7 +43,7 @@ jobs:
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./dist/client
+          path: ./.output/public
 
   deploy:
     environment:
