@@ -18,7 +18,7 @@ onMounted(async () => {
 <template>
   <section id="opportunities" class="opportunities">
     <div class="opportunities-heading reveal">
-      <div class="section-label"><span>03</span> Opportunities</div>
+      <div class="section-label"><span>04</span> Opportunities</div>
       <h2>Find work worth<br><em>showing up for.</em></h2>
       <p>Research openings are reviewed by RESERA moderators before they reach the collective.</p>
       <NuxtLink class="button opportunity-action" to="/partners/">

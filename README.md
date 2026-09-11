@@ -1,6 +1,6 @@
 # RESERA
 
-RESERA is a student-led research collective with 1,200+ members and growing. The public site is a Nuxt 4 application generated as SEO-ready HTML and hydrated into an interactive Vue experience in the browser. The repository also contains the future Django account and opportunity service.
+RESERA is a worldwide community of 1,230+ student researchers working across 12+ academic disciplines, with 25+ papers in progress and 2+ completed and published. The public site is a Nuxt 4 application generated as SEO-ready HTML and hydrated into an interactive Vue experience in the browser. The repository also contains the future Django account and opportunity service.
 
 ## Architecture
 
@@ -18,7 +18,7 @@ bun install
 bun run dev
 ```
 
-The local app is available under `/Resera/`, matching its GitHub Pages project path.
+The local app is available at the site root, matching the `ReseraProject.github.io` organization Pages repository.
 
 ## Validation
 

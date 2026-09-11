@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://reseraproject.github.io/Resera/sitemap.xml
+Sitemap: https://reseraproject.github.io/sitemap.xml

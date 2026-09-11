@@ -1,11 +1,11 @@
-const siteUrl = 'https://reseraproject.github.io/Resera/'
+const siteUrl = 'https://reseraproject.github.io/'
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-08-30',
   devtools: { enabled: false },
   ssr: true,
   app: {
-    baseURL: '/Resera/',
+    baseURL: '/',
     head: {
       htmlAttrs: { lang: 'en' },
       meta: [
@@ -16,7 +16,7 @@ export default defineNuxtConfig({
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:image', content: `${siteUrl}og.png` }
       ],
-      link: [{ rel: 'icon', type: 'image/png', href: '/Resera/resera-logo.png' }]
+      link: [{ rel: 'icon', type: 'image/png', href: '/resera-logo.png' }]
     }
   },
   css: ['~/assets/css/base.css', '~/assets/css/nuxt.css'],

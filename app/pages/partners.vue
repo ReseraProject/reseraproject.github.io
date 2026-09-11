@@ -37,25 +37,25 @@ const emailHref = `mailto:reseraresearch1@gmail.com?subject=${encodeURIComponent
 
 useReveal()
 useSeoMeta({
-  title: 'Partner with RESERA — Reach 1,200+ Young Researchers',
+  title: 'Partner with RESERA — Reach 1,230+ Young Researchers',
   description: 'Partner with RESERA to share research opportunities, mentorship, workshops, challenges, and educational resources with a growing student research community.',
   ogTitle: 'Partner with RESERA',
-  ogDescription: 'Bring meaningful research access to a student-led collective of 1,200+ members.',
-  ogUrl: 'https://reseraproject.github.io/Resera/partners/',
+  ogDescription: 'Bring meaningful research access to a student-led collective of 1,230+ researchers.',
+  ogUrl: 'https://reseraproject.github.io/partners/',
   twitterTitle: 'Partner with RESERA',
-  twitterDescription: 'Connect your organization with a growing community of 1,200+ young researchers.'
+  twitterDescription: 'Connect your organization with a growing community of 1,230+ young researchers.'
 })
 useHead({
-  link: [{ rel: 'canonical', href: 'https://reseraproject.github.io/Resera/partners/' }],
+  link: [{ rel: 'canonical', href: 'https://reseraproject.github.io/partners/' }],
   script: [{
     type: 'application/ld+json',
     innerHTML: JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'WebPage',
       name: 'Partner with RESERA',
-      url: 'https://reseraproject.github.io/Resera/partners/',
+      url: 'https://reseraproject.github.io/partners/',
       description: 'Partnership opportunities with the RESERA student research collective.',
-      isPartOf: { '@type': 'WebSite', name: 'RESERA', url: 'https://reseraproject.github.io/Resera/' }
+      isPartOf: { '@type': 'WebSite', name: 'RESERA', url: 'https://reseraproject.github.io/' }
     })
   }]
 })
@@ -70,13 +70,13 @@ useHead({
       <div class="partners-hero-content">
         <p class="eyebrow"><span /> For organizations</p>
         <h1>Open a door.<br><em>We’ll help students enter.</em></h1>
-        <p>Partner with a student-led collective of 1,200+ members who are ready to ask sharper questions and engage seriously with research.</p>
+        <p>Partner with a student-led collective of 1,230+ researchers who are ready to ask sharper questions and engage seriously with research.</p>
         <div class="hero-actions">
           <a class="button button-light" :href="emailHref">Introduce your organization <span>↗</span></a>
           <a class="text-link" href="#ways-to-partner">Explore partnership formats <span>↓</span></a>
         </div>
       </div>
-      <div class="partner-proof"><strong>1,200+</strong><span>members<br>and growing</span></div>
+      <div class="partner-proof"><strong>1,230+</strong><span>student<br>researchers</span></div>
     </section>
 
     <section class="partner-value">
@@ -89,9 +89,9 @@ useHead({
         </div>
       </div>
       <div class="partner-metrics reveal">
-        <div><strong>1,200+</strong><span>community members</span></div>
-        <div><strong>04</strong><span>core research fields</span></div>
-        <div><strong>01</strong><span>student-led collective</span></div>
+        <div><strong>1,230+</strong><span>student researchers</span></div>
+        <div><strong>25+</strong><span>papers being written</span></div>
+        <div><strong>12+</strong><span>academic disciplines</span></div>
       </div>
     </section>
 

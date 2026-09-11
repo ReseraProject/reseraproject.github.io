@@ -42,6 +42,7 @@ watch(() => route.fullPath, closeMenu)
 
     <nav :class="{ open: menuOpen }" aria-label="Main navigation">
       <NuxtLink to="/#about" @click="closeMenu">About</NuxtLink>
+      <NuxtLink to="/#research" @click="closeMenu">Research</NuxtLink>
       <NuxtLink to="/#explore" @click="closeMenu">Explore</NuxtLink>
       <NuxtLink to="/#opportunities" @click="closeMenu">Opportunities</NuxtLink>
       <NuxtLink to="/partners/" @click="closeMenu">Partners</NuxtLink>
