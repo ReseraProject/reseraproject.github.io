@@ -6,8 +6,10 @@
     "dev": "nuxt dev",
     "build": "nuxt build",
     "preview": "nuxt preview",
-    "generate": "nuxt generate",
-    "typecheck": "nuxt typecheck"
+    "generate": "bun run validate:content && nuxt generate",
+    "typecheck": "nuxt typecheck",
+    "validate:content": "bun run scripts/validate-opportunities.ts",
+    "test": "bun test"
   },
   "type": "module",
   "dependencies": {

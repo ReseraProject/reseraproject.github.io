@@ -29,6 +29,9 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
+      - name: Test opportunity content
+        run: bun test
+
       - name: Type-check Nuxt
         run: bun run typecheck
 

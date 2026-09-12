@@ -5,11 +5,23 @@ RESERA is a worldwide community of 1,230+ student researchers working across 12+
 ## Architecture
 
 - `app/` — TypeScript, Vue, and Nuxt 4 frontend
+- `content/opportunities.json` — reviewed public opportunity records
 - `public/` — RESERA imagery, social preview, robots, and sitemap
 - `backend/` — Django session authentication, opportunity submissions, and staff moderation retained for future use
 - `.github/workflows/deploy-pages.yml` — Nuxt static generation and GitHub Pages deployment
 
-GitHub Pages serves generated static files and cannot execute Python. The frontend displays approved opportunities after hydration only when `NUXT_PUBLIC_API_BASE` points to a deployed Django service.
+GitHub Pages serves generated static files and cannot execute Python. The public marketplace reads only reviewed records committed to `content/opportunities.json`; unreviewed submissions remain private and arrive through the structured email link.
+
+## Opportunity publishing
+
+Add only approved public information to `content/opportunities.json`, following `content/opportunities.schema.json`. Every record receives a shareable route at `/opportunities/<slug>/`. Invalid records, duplicate slugs, unsafe source URLs, and unsupported fields block deployment.
+
+```powershell
+bun run validate:content
+bun test
+```
+
+Expired records remain available at their direct URL with a closed status but are hidden from the default active marketplace.
 
 ## Frontend
 
@@ -25,6 +37,7 @@ The local app is available at the site root, matching the `ReseraProject.github.
 ```powershell
 bun run typecheck
 bun run generate
+bun test
 .\.venv\Scripts\python.exe backend\manage.py test core
 ```
 

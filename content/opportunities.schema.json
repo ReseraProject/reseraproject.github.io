@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RESERA approved opportunities",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "slug",
+      "title",
+      "organization",
+      "summary",
+      "description",
+      "field",
+      "location",
+      "remote",
+      "eligibility",
+      "deadline",
+      "source_url",
+      "published_at",
+      "featured"
+    ],
+    "properties": {
+      "slug": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "title": { "type": "string", "minLength": 1 },
+      "organization": { "type": "string", "minLength": 1 },
+      "summary": { "type": "string", "minLength": 1 },
+      "description": { "type": "string", "minLength": 1 },
+      "field": {
+        "enum": [
+          "natural-sciences",
+          "technology",
+          "humanities",
+          "social-impact",
+          "other"
+        ]
+      },
+      "location": { "type": "string" },
+      "remote": { "type": "boolean" },
+      "eligibility": { "type": "string", "minLength": 1 },
+      "deadline": {
+        "oneOf": [
+          { "type": "string", "format": "date" },
+          { "type": "null" }
+        ]
+      },
+      "source_url": {
+        "type": "string",
+        "format": "uri",
+        "pattern": "^https://"
+      },
+      "published_at": {
+        "type": "string",
+        "format": "date"
+      },
+      "featured": { "type": "boolean" }
+    }
+  }
+}

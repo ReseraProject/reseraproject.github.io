@@ -12,7 +12,10 @@ const base = runtimeConfig.app.baseURL
     <p>Student-led. Curiosity-driven.<br>Built for discovery.</p>
     <div class="footer-meta">
       <span>© {{ new Date().getFullYear() }} RESERA</span>
-      <NuxtLink to="/partners/">Partner with RESERA ↗</NuxtLink>
+      <span class="footer-links">
+        <NuxtLink to="/opportunities/">Opportunities ↗</NuxtLink>
+        <NuxtLink to="/partners/">Partner with RESERA ↗</NuxtLink>
+      </span>
     </div>
   </footer>
 </template>

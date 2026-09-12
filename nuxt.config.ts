@@ -1,4 +1,8 @@
+import opportunityDataSource from './content/opportunities.json'
+
 const siteUrl = 'https://reseraproject.github.io/'
+const opportunityData = opportunityDataSource as Array<{ slug: string }>
+const opportunityRoutes = opportunityData.map(item => `/opportunities/${item.slug}/`)
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-08-30',
@@ -29,7 +33,7 @@ export default defineNuxtConfig({
     preset: 'static',
     prerender: {
       crawlLinks: false,
-      routes: ['/', '/partners/']
+      routes: ['/', '/partners/', '/opportunities/', '/sitemap.xml', ...opportunityRoutes]
     }
   },
   typescript: {
